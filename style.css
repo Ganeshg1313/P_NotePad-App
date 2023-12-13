@@ -1,0 +1,57 @@
+:root {
+    --bg-color: #161D35;
+    --input-box : #04104b;
+    --input-text : #ffffff;
+    --char-count-bg : #0E1F63;
+    --char-count-text : #E4D9FF;
+  }
+  
+  /* defaults */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-header{
+    width: 80%;
+    height: 6rem;
+    max-height: 6rem;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    gap:3rem;
+  }
+
+  .app-header img{
+    width: 4rem;
+  }
+
+  #app-title{
+    font-size: 28px;
+    color:#ffffff;
+  }
+
+  #input-box{
+    width: 80%;
+    height: 70%;
+    max-width:80%;
+    max-height: 80%;
+    background: var(--char-count-bg);
+    border-radius: 24px;
+    border:1px solid whitesmoke;
+    padding: 20px;
+    font-size: 18px;
+    color: var(--input-text);
+  }
