@@ -12,16 +12,27 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="light">
     <header class="app-header">
-      <img src="images/icon.png" alt="icon" />
-      <h2 id="app-title">Note Pad</h2>
+      <div class="title-icon">
+        <img src="images/icon.png" alt="icon" />
+        <h2 class="light" id="app-title">Note Pad</h2>
+      </div>
+      
+      <div class="btn-grp">
+        <button class="btn light" id="save" onclick="saveNote()">Save</button>
+        <button class="btn light" id="clear" onclick="clearNote()">Clear</button>
+        <button class="btn light" id="theme" onclick="changeTheme()">Change Theme</button>
+      </div>
+      
     </header>
     <textarea
       name="input-box"
+      class="light"
       id="input-box"
       placeholder="Write something..."
     ></textarea>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/31b77c59f7.js" crossorigin="anonymous"></script>
   </body>
 </html>

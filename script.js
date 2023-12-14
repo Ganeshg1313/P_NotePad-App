@@ -1,13 +1,32 @@
 const inputBox = document.getElementById("input-box");
+const saveBtn = document.getElementById("save");
+var userNotes;
 
-document.addEventListener("onkeypress",saveNote());
+function displaydata(){
+    inputBox.innerHTML = localStorage.getItem("note");
+}
 
 function saveNote(){
-    localStorage.setItem("note",inputBox.value);
+
+    // console.log("btn")
+    userNotes = localStorage.getItem("note");
+
+    userNotes += localStorage.setItem("note",inputBox.value);
+
+    displaydata();
+
 }
 
-function retrieveNote(){
-    localStorage.getItem();
+
+function clearNote(){
+    localStorage.clear();
+    displaydata();
 }
 
-retrieveNote();
+
+function changeTheme(){
+}
+
+displaydata();
+
+

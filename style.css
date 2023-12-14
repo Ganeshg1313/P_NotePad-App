@@ -1,9 +1,17 @@
 :root {
-    --bg-color: #161D35;
-    --input-box : #04104b;
-    --input-text : #ffffff;
-    --char-count-bg : #0E1F63;
-    --char-count-text : #E4D9FF;
+    --dark-bg-color: #041430;
+    --dark-input-box : #0920a3;
+    --dark-input-text : #ffffff;
+    --dark-char-count-bg : #0E1F63;
+    --dark-char-count-text : #E4D9FF;
+    --dark-btn-bg : #193bc1;
+
+    --light-bg-color: #e0fbfc;
+    --light-input-box : #ffff;
+    --light-input-text : #252422;
+    --light-char-count-bg : #E4D9FF;
+    --light-char-count-text : #0E1F63;
+    --light-btn-bg : #b7c5ff;
   }
   
   /* defaults */
@@ -13,15 +21,25 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
-  
-  body{
-    width: 100vw;
-    height: 100vh;
-    background: var(--bg-color);
+
+  /*Common*/
+  .title-icon{
+    width: 20%;
+    min-width: 20%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  .btn-grp{
+    width: max-content;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .app-header img{
+    width: 4rem;
   }
 
   .app-header{
@@ -31,27 +49,102 @@
     max-width: 80%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap:3rem;
   }
 
-  .app-header img{
-    width: 4rem;
+  /*Dark Theme*/
+  
+  body.dark{
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  #app-title{
+  .btn.dark{
+    font-weight: 600;
+    background-color: var(--btn-bg);
+    color: var(--input-text);
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .btn.dark:hover{
+    background-color: var(--char-count-bg);
+    border: 1px solid #fff;
+  }
+
+  
+  
+
+  #app-title.dark{
     font-size: 28px;
     color:#ffffff;
   }
 
-  #input-box{
+  
+
+  #input-box.dark{
     width: 80%;
     height: 70%;
     max-width:80%;
     max-height: 80%;
     background: var(--char-count-bg);
-    border-radius: 24px;
     border:1px solid whitesmoke;
     padding: 20px;
     font-size: 18px;
     color: var(--input-text);
+  }
+
+  
+
+  /*Light Theme */
+
+  body.light{
+    width: 100vw;
+    height: 100vh;
+    background: var(--light-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn.light{
+    font-weight: 600;
+    background-color: var(--light-btn-bg);
+    color: var(--light-input-textinput-text);
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .btn.light:hover{
+    background-color: var(--light-char-count-bg);
+    border: 1px solid #474747;
+  }
+
+
+  #app-title.light{
+    font-size: 28px;
+    color:#0f0f0f;
+  }
+
+  #input-box.light{
+    width: 80%;
+    height: 70%;
+    max-width:80%;
+    max-height: 80%;
+    background: var(--light-input-box);
+    border:1px solid rgb(23, 23, 23);
+    padding: 20px;
+    font-size: 18px;
+    color: var(--light-input-text);
   }
