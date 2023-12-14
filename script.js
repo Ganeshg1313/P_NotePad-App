@@ -1,32 +1,111 @@
-const inputBox = document.getElementById("input-box");
-const saveBtn = document.getElementById("save");
+const container = document.querySelector(".container");
+const inputBox = document.querySelector("#input-box");
+const btn1 = document.getElementById("save");
+const btn2 = document.getElementById("clear");
+const btn3 = document.getElementById("theme");
+const appTitle = document.querySelector("#app-title");
+const characterCounterElement = document.querySelector("#character-counter");
+let typedCharactersElement = document.getElementById("typed-characters");
+
 var userNotes;
 
-function displaydata(){
-    inputBox.innerHTML = localStorage.getItem("note");
+function charCounter(){
+    const typedCharacters = inputBox.value.length;
+    typedCharactersElement.textContent = typedCharacters;
 }
 
-function saveNote(){
+inputBox.addEventListener("keyup",charCounter);
 
-    // console.log("btn")
-    userNotes = localStorage.getItem("note");
 
-    userNotes += localStorage.setItem("note",inputBox.value);
 
-    displaydata();
-
+function displaydata() {
+  inputBox.innerHTML = localStorage.getItem("note");
 }
 
+function saveNote() {
+  userNotes = localStorage.getItem("note");
 
-function clearNote(){
-    localStorage.clear();
-    displaydata();
+  userNotes += localStorage.setItem("note", inputBox.value);
+
+  displaydata();
 }
 
-
-function changeTheme(){
+function clearNote() {
+  localStorage.clear();
+  displaydata();
 }
 
+function setTheme() {
+  if (container.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+function checkTheme() {
+  let theme = localStorage.getItem("theme");
+  console.log(theme);
+  if (theme != "light") {
+    container.classList.remove("light");
+    container.classList.add("dark");
+    appTitle.classList.remove("light");
+    appTitle.classList.add("dark");
+    inputBox.classList.remove("light");
+    inputBox.classList.add("dark");
+    btn1.classList.remove("light");
+    btn1.classList.add("dark");
+    btn2.classList.remove("light");
+    btn2.classList.add("dark");
+    btn3.classList.remove("light");
+    btn3.classList.add("dark");
+    characterCounterElement.classList.remove("light");
+    characterCounterElement.classList.add("dark");
+  }
+}
+
+function changeTheme() {
+  if (container.classList.contains("light")) {
+    container.classList.remove("light");
+    container.classList.add("dark");
+    appTitle.classList.remove("light");
+    appTitle.classList.add("dark");
+    inputBox.classList.remove("light");
+    inputBox.classList.add("dark");
+    btn1.classList.remove("light");
+    btn1.classList.add("dark");
+    btn2.classList.remove("light");
+    btn2.classList.add("dark");
+    btn3.classList.remove("light");
+    btn3.classList.add("dark");
+    characterCounterElement.classList.remove("light");
+    characterCounterElement.classList.add("dark");
+    
+  } else {
+    appTitle.classList.remove("dark");
+    appTitle.classList.add("light");
+    container.classList.remove("dark");
+    container.classList.add("light");
+    inputBox.classList.remove("dark");
+    inputBox.classList.add("light");
+    btn1.classList.remove("dark");
+    btn1.classList.add("light");
+    btn2.classList.remove("dark");
+    btn2.classList.add("light");
+    btn3.classList.remove("dark");
+    btn3.classList.add("light");
+    characterCounterElement.classList.remove("dark");
+    characterCounterElement.classList.add("light");
+  }
+
+  if (container.classList.contains("light")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+window.addEventListener("load", checkTheme, false);
 displaydata();
-
-
+window.addEventListener("beforeunload", setTheme, false);
+window.addEventListener("load",charCounter);

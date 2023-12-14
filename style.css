@@ -1,6 +1,6 @@
 :root {
     --dark-bg-color: #041430;
-    --dark-input-box : #0920a3;
+    --dark-input-box : #2420fdc9;
     --dark-input-text : #ffffff;
     --dark-char-count-bg : #0E1F63;
     --dark-char-count-text : #E4D9FF;
@@ -55,10 +55,10 @@
 
   /*Dark Theme*/
   
-  body.dark{
+  .container.dark{
     width: 100vw;
     height: 100vh;
-    background: var(--bg-color);
+    background: var(--dark-bg-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,8 +67,8 @@
 
   .btn.dark{
     font-weight: 600;
-    background-color: var(--btn-bg);
-    color: var(--input-text);
+    background-color: var(--dark-btn-bg);
+    color: var(--dark-input-text);
     padding: 14px;
     border: none;
     border-radius: 12px;
@@ -76,7 +76,7 @@
   }
 
   .btn.dark:hover{
-    background-color: var(--char-count-bg);
+    background-color: var(--dark-char-count-bg);
     border: 1px solid #fff;
   }
 
@@ -85,7 +85,7 @@
 
   #app-title.dark{
     font-size: 28px;
-    color:#ffffff;
+    color:#ffff;
   }
 
   
@@ -95,21 +95,25 @@
     height: 70%;
     max-width:80%;
     max-height: 80%;
-    background: var(--char-count-bg);
+    background: var(--dark-input-box);
     border:1px solid whitesmoke;
     padding: 20px;
     font-size: 18px;
-    color: var(--input-text);
+    color: var(--dark-input-text);
   }
 
   
+  #character-counter.dark{
+    color: #ffff;
+  }
+
 
   /*Light Theme */
 
-  body.light{
+  .container.light{
     width: 100vw;
     height: 100vh;
-    background: var(--light-bg-color);
+    background: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,5 +150,9 @@
     border:1px solid rgb(23, 23, 23);
     padding: 20px;
     font-size: 18px;
+    color: var(--light-input-text);
+  }
+
+  #character-counter.light{
     color: var(--light-input-text);
   }
