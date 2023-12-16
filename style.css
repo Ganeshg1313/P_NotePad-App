@@ -1,19 +1,25 @@
 :root {
-    --dark-bg-color: #041430;
-    --dark-input-box : #2420fdc9;
-    --dark-input-text : #ffffff;
-    --dark-char-count-bg : #0E1F63;
-    --dark-char-count-text : #E4D9FF;
-    --dark-btn-bg : #193bc1;
+  --bg-color: linear-gradient(145deg, rgba(253,188,255,1) 15%, rgba(81,225,255,1) 57%, rgba(0,212,255,1) 100%);;
+  --input-box : #f4f3ee;
+  --text : #062726;
+  --btn-bg : #5f21ab;
+  --btn-bg-on-hover: #440d73;
+  --btn-text:#f4f3ee;
+  --app-title : #5b2a86;
+  --char-counter:#310656;
+}
 
-    --light-bg-color: #e0fbfc;
-    --light-input-box : #ffff;
-    --light-input-text : #252422;
-    --light-char-count-bg : #E4D9FF;
-    --light-char-count-text : #0E1F63;
-    --light-btn-bg : #b7c5ff;
-  }
-  
+.darkmode{
+  --bg-color:#000814;
+  --input-box : #14213d;
+  --text : #fdfdff;
+  --btn-bg : #5465ff;
+  --btn-bg-on-hover: #27187e;
+  --btn-text:#fdfdff;
+  --app-title : #fdfdff;
+  --char-counter:#fdfdff;
+}
+
   /* defaults */
   * {
     margin: 0;
@@ -22,9 +28,38 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  /*Common*/
+  body{
+    position: relative;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  .SVG{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    fill: var(--btn-bg);
+  }
+
+  .SVG:active{
+    width: 25px;
+    height: 25px;
+  }
+  .container{
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
   .title-icon{
-    width: 20%;
+    width: 24%;
     min-width: 20%;
     display: flex;
     justify-content: space-between;
@@ -34,7 +69,7 @@
   .btn-grp{
     width: max-content;
     display: flex;
-    gap: 16px;
+    gap: 1.3rem;
     align-items: center;
   }
 
@@ -52,107 +87,88 @@
     justify-content: space-between;
     gap:3rem;
   }
-
-  /*Dark Theme*/
   
-  .container.dark{
-    width: 100vw;
-    height: 100vh;
-    background: var(--dark-bg-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  
 
-  .btn.dark{
+  .btn{
     font-weight: 600;
-    background-color: var(--dark-btn-bg);
-    color: var(--dark-input-text);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     padding: 14px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
   }
 
-  .btn.dark:hover{
-    background-color: var(--dark-char-count-bg);
+  .btn:hover{
+    background-color: var(--btn-bg-on-hover);
     border: 1px solid #fff;
   }
 
   
   
 
-  #app-title.dark{
+  #app-title{
     font-size: 28px;
-    color:#ffff;
+    color:var(--app-title);
   }
 
   
 
-  #input-box.dark{
+  #input-box{
     width: 80%;
     height: 70%;
     max-width:80%;
     max-height: 80%;
-    background: var(--dark-input-box);
+    background: var(--input-box);
     border:1px solid whitesmoke;
     padding: 20px;
     font-size: 18px;
-    color: var(--dark-input-text);
+    color: var(--text);
   }
 
   
-  #character-counter.dark{
-    color: #ffff;
+  #character-counter{
+    color: var(--char-counter);
+    position: absolute;
+    bottom: 3%;
+    right: 12%;
   }
 
 
-  /*Light Theme */
-
-  .container.light{
-    width: 100vw;
-    height: 100vh;
-    background: var(--bg-color);
+  .form-container{
+    width: 30rem;
+    height: 20rem;
+    padding: 10px;
+    background-color:#fdfdff ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    text-align: start;
+    line-height: 30px;
+    overflow-y: auto;
   }
 
-  .btn.light{
+.form-container h2{
+  margin-top: 16px;
+  color:red;
+}
+
+.form-container p{
+  margin: 10px auto;
+}
+
+.form-container form button{
     font-weight: 600;
-    background-color: var(--light-btn-bg);
-    color: var(--light-input-textinput-text);
+    background-color: #10ff4c;
+    color:#000;
     padding: 14px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-  }
-
-  .btn.light:hover{
-    background-color: var(--light-char-count-bg);
-    border: 1px solid #474747;
-  }
-
-
-  #app-title.light{
-    font-size: 28px;
-    color:#0f0f0f;
-  }
-
-  #input-box.light{
-    width: 80%;
-    height: 70%;
-    max-width:80%;
-    max-height: 80%;
-    background: var(--light-input-box);
-    border:1px solid rgb(23, 23, 23);
-    padding: 20px;
-    font-size: 18px;
-    color: var(--light-input-text);
-  }
-
-  #character-counter.light{
-    color: var(--light-input-text);
-  }
+}
