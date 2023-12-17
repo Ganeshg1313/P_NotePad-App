@@ -1,8 +1,8 @@
 const container = document.querySelector(".container");
 const inputBox = document.querySelector("#input-box");
-const saveBtn = document.getElementById("save");
+const saveBtn = document.getElementById(".save");
 const autoSaveBtn = document.getElementById("autosave")
-const clearBtn = document.getElementById("clear");
+const clearBtn = document.getElementById(".clear");
 const appTitle = document.querySelector("#app-title");
 const securityPrompt = document.querySelector(".form-container");
 const acceptBtn = document.querySelector(".accept-button");
@@ -67,7 +67,24 @@ document.addEventListener("keydown", e =>{
   else if(e.key.toLowerCase() === 'f' && e.ctrlKey){
     changeTheme();
     e.preventDefault();
-
+  }
+  else if(e.key === 'Enter') {
+    // Check if the focused element has the desired class
+    if (document.activeElement.classList.contains("save")) {
+        saveNote();
+    }
+    else if(document.activeElement.classList.contains("clear")){
+      clearNote();
+    }
+    else if(document.activeElement.classList.contains("copy")){
+      copyToClipboard();
+    }
+    else if(document.activeElement.classList.contains("theme")){
+      changeTheme();
+    }
+    else if(document.activeElement.classList.contains("shortcuts")){
+      displayShortCuts();
+    }
   }
 
 });
