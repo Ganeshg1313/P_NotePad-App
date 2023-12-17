@@ -127,7 +127,7 @@ body {
   width: 80%;
   max-width: 80%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   margin-top: 10px;
   
 }
@@ -141,7 +141,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: start;

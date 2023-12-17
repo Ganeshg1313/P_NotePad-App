@@ -84,8 +84,8 @@ window.addEventListener("load",()=>{
   
   const status = localStorage.getItem("securityTerm");
 
-  if(status == "accepted"){
-    securityPrompt.style.display="none";
+  if(status != "accepted"){
+    securityPrompt.style.display="flex";
   }
   
 })
