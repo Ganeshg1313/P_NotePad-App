@@ -30,7 +30,7 @@ This notepad app will use local storage for to store the notes
 3 => User can use the buttons provided just above the text area
    <br> --> Save button
    <br> --> Clear All button
-    <br>--> Change t<br> button
+    <br>--> Change theme button
     <br>--> Copy button
     <br>--> keyboard shorcuts button 
     <br>--> Auto Save Button<br>
